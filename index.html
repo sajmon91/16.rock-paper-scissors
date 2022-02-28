@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body>
+
+  <section class="heading">
+    <img src="images/logo.svg" alt="logo of the website">
+
+    <div class="score-container">
+      <div class="score-wrapper">
+        <p>YOU</p>
+        <h1 class="score">0</h1>
+      </div>
+
+      <div class="score-wrapper">
+        <p>COM</p>
+        <h1 class="score">0</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="play-container">
+
+    <div class="pick-text">
+      <p>YOU PICKED</p>
+      <p>THE HOUSE PICKED</p>
+    </div>
+
+    <a href="#" data-toggle="choices" data-value="paper" class="circle paper">
+      <img class="choice-image" src="images/icon-paper.svg" alt="vector icon of paper">
+    </a>
+
+    <a href="#" data-toggle="choices" data-value="scissor" class="circle scissor">
+      <img class="choice-image" src="images/icon-scissors.svg" alt="vector icon of scissor">
+    </a>
+
+    <a href="#" data-toggle="choices" data-value="rock" class="circle rock">
+      <img class="choice-image" src="images/icon-rock.svg" alt="vector icon of rock">
+    </a>
+
+
+    <div class="house-pick">
+      <div></div>
+    </div>
+
+    <div class="result">
+      YOU LOSE
+      <button>PLAY AGAIN</button>
+    </div>
+
+  </section>
+
+
+
+
+</body>
+
+</html>
