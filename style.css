@@ -46,7 +46,7 @@ body {
 	width: 70rem;
 	height: 15rem;
 	border: .3rem solid var(--header-outline);
-	border-radius: 1rem;
+	border-radius: 2rem;
 	margin: 0 auto;
 	padding: 2.5rem 3.5rem;
 }
@@ -233,6 +233,99 @@ body {
 	pointer-events: all;
 }
 
+.rule-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: .2rem solid #fff;
+	border-radius: .5rem;
+	cursor: pointer;
+	color: #fff;
+	font-size: 1.6rem;
+	letter-spacing: .3rem;
+	height: 4rem;
+	width: 10rem;
+	margin: 0 5rem 0 auto;
+	transition: border-color .3s ease;
+}
+.rule-button:hover {
+	border-color: #b3b3b3;
+}
+
+.rule-button:hover > span:nth-child(1) {
+	animation: letter-wave 1s ease infinite;
+}
+
+.rule-button:hover > span:nth-child(2) {
+	animation: letter-wave 1s ease .2s infinite;
+}
+
+.rule-button:hover > span:nth-child(3) {
+	animation: letter-wave 1s ease .4s infinite;
+}
+
+.rule-button:hover > span:nth-child(4) {
+	animation: letter-wave 1s ease .6s infinite;
+}
+
+.rule-button:hover > span:nth-child(5) {
+	animation: letter-wave 1s ease .8s infinite;
+}
+
+.modal-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, .5);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	display: none;
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #fff;
+	border-radius: 1rem;
+	height: 40rem;
+	width: 40rem;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.modal .rules {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal .rules h2 {
+	color: var(--dark-text);
+	font-size: 3rem;
+}
+
+.modal .rules .close-rule {
+	cursor: pointer;
+	transition: transform .3s ease;
+}
+
+.modal .rules .close-rule:hover {
+	transform: scale(1.2);
+}
+
+.modal .image-rule {
+	display: block;
+	margin: auto auto 0;
+	pointer-events: none;
+}
+
 /* animations */
 
 @keyframes pump-shadow {
@@ -272,5 +365,237 @@ body {
 @keyframes pump-button {
 	50% {
 		transform: scale(1.05);
+	}
+}
+
+@keyframes letter-wave {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-60%);
+	}
+}
+
+/* responsive */
+
+@media (max-width: 720px) {
+	body {
+		padding: 3rem 1.5rem;
+	}
+	.heading {
+		width: 100%;
+		padding: 0 3rem;
+	}
+	.play-container {
+		width: 38rem;
+		font-size: 1.6rem;
+		letter-spacing: 0;
+	}
+	.pick-text {
+		padding: 0 2rem;
+		top: 8rem;
+	}
+	.circle {
+		box-shadow: inset 0 -.35rem 0 0 rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(187, 187, 187, 0.6),
+			0 0 0 0 rgba(187, 187, 187, 0.6);
+		height: 12rem;
+		width: 12rem;
+	}
+	.circle::before {
+		box-shadow: inset 0 0.35rem 0 rgba(107, 107, 107, 0.3);
+		height: 10rem;
+		width: 10rem;
+	}
+	.choice-image {
+		height: auto;
+		width: auto;
+	}
+	.paper {
+		left: 0;
+		top: 10rem;
+	}
+	.scissor {
+		left: 25rem;
+		top: 10rem;
+	}
+	.rock {
+		left: 13rem;
+		top: 30rem;
+	}
+	.house-pick {
+		height: 12rem;
+		top: 15rem;
+		width: 12rem;
+	}
+	.rule-button {
+		margin: 0 auto 2rem;
+		transform: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.heading > img {
+		width: 10rem;
+	}
+	.score-container {
+		height: 8rem;
+		width: 15rem;
+	}
+	.score-container .score-wrapper .score {
+		font-size: 3rem;
+	}
+	.modal {
+		height: 35rem;
+		width: 35rem;
+	}
+	.modal .image-rule {
+		width: 25rem;
+	}
+	.result {
+		top: 42rem;
+	}
+}
+
+@media (max-width: 390px) {
+	.heading {
+		padding: 0 1.5rem;
+		height: 10rem;
+	}
+	.heading > img {
+		width: 8rem;
+	}
+	.score-container {
+		height: 6rem;
+		width: 12rem;
+	}
+	.score-container .score-wrapper .score {
+		font-size: 1.6rem;
+	}
+	.play-container {
+		width: 30rem;
+		height: 35rem;
+	}
+	.play-container::before {
+		background-size: 20rem 17rem;
+	}
+	.circle {
+		height: 8rem;
+		width: 8rem;
+	}
+	.circle::before {
+		height: 6rem;
+		width: 6rem;
+	}
+	.choice-image {
+		height: 4rem;
+		width: 4rem;
+	}
+	.paper {
+		left: 3rem;
+		top: 7rem;
+	}
+	.scissor {
+		left: 18rem;
+		top: 7rem;
+	}
+	.rock {
+		left: 11rem;
+		top: 19rem;
+	}
+	.result {
+		font-size: 2.5rem;
+		top: 22rem;
+	}
+	.result button {
+		font-size: 1.4rem;
+		width: 20rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.modal {
+		height: 30rem;
+		width: 25rem;
+	}
+	.modal .image-rule {
+		width: 20rem;
+	}
+}
+
+@media (max-width: 320px) {
+	body {
+		padding: 1rem .5rem;
+	}
+	.heading > img {
+		width: 6rem;
+	}
+	.score-container {
+		height: 5rem;
+		width: 10rem;
+	}
+	.score-container .score-wrapper p {
+		font-size: 1.5rem;
+	}
+	.score-container .score-wrapper .score {
+		font-size: 1.6rem;
+	}
+	.play-container {
+		width: 20rem;
+	}
+	.play-container::before {
+		background-size: 17rem 14rem;
+	}
+	.paper {
+		left: -1rem;
+		top: 7rem;
+	}
+	.scissor {
+		left: 13rem;
+		top: 7rem;
+	}
+	.rock {
+		left: 6rem;
+		top: 19rem;
+	}
+}
+@media (max-width: 240px) {
+	.circle {
+		height: 6rem;
+		width: 6rem;
+	}
+	.house-pick {
+		height: 6rem;
+		top: 15rem;
+		width: 6rem;
+	}
+	.circle::before {
+		height: 4rem;
+		width: 4rem;
+	}
+	.choice-image {
+		height: 2rem;
+		width: 2rem;
+	}
+	.paper {
+		left: 1rem;
+		top: 8rem;
+	}
+	.scissor {
+		left: 13rem;
+		top: 8rem;
+	}
+	.rock {
+		left: 7rem;
+		top: 19rem;
+	}
+
+	.modal {
+		height: 25rem;
+		width: 20rem;
+	}
+	.modal .image-rule {
+		width: 17rem;
 	}
 }
