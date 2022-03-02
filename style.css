@@ -121,15 +121,15 @@ body {
 	justify-content: center;
 	background-color: #182341;
 	border-radius: 100%;
-	height: 14rem;
-	width: 14rem;
+	height: 18rem;
+	width: 18rem;
 	position: absolute;
-	left: 60%;
-	top: 13rem;
+	left: 63%;
+	top: 17rem;
 	opacity: 0;
 }
 .house-pick.show-text {
-	transition: opacity 1s ease 0.5s, left 1s ease;
+	transition: opacity 1s ease .5s, left 1s ease;
 	opacity: 1;
 }
 
@@ -191,6 +191,44 @@ body {
 }
 .circle:hover img {
 	animation: shake-up 2s ease infinite;
+}
+
+.circle.hideChoices {
+	transition: opacity 1s ease;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.circle.go-left {
+	transition: all 1s ease;
+	left: 6rem;
+	top: 17rem;
+	transform: scale(1.2);
+}
+
+.circle.go-left:hover {
+	animation: none;
+}
+
+.circle.circle.go-right {
+	position: static;
+	transform: scale(1.2);
+}
+
+.circle.circle.go-right:hover {
+	animation: none;
+}
+
+.final-left {
+	left: -4rem !important;
+}
+
+.final-right {
+	left: 79% !important;
+}
+
+.shadow-winner {
+	animation: shadow 2s ease infinite;
 }
 
 .result {
@@ -284,7 +322,15 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: 100;
-	display: none;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 1s;
+}
+
+.modal-container.show-modal {
+	opacity: 1;
+	pointer-events: all;
+	transition: all 1s;
 }
 
 .modal {
@@ -378,6 +424,17 @@ body {
 	}
 }
 
+@keyframes shadow {
+	65% {
+		box-shadow: inset 0 -.5rem 0 0 rgba(0, 0, 0, 0.3), 0 0 0 1.5rem rgba(99, 99, 99, 0),
+			0 0 0 3.5rem rgba(99, 99, 99, 0);
+	}
+	100% {
+		box-shadow: inset 0 -.5rem 0 0 rgba(0, 0, 0, 0.3), 0 0 0 2.5rem rgba(99, 99, 99, 0),
+			0 0 0 3.5rem rgba(187, 187, 187, 0);
+	}
+}
+
 /* responsive */
 
 @media (max-width: 720px) {
@@ -432,6 +489,23 @@ body {
 	.rule-button {
 		margin: 0 auto 2rem;
 		transform: none;
+	}
+	.circle.go-left {
+		left: 0rem;
+		top: 15rem;
+	}
+}
+
+@media (max-width: 510px) {
+	.final-left {
+		left: 0rem !important;
+	}
+
+	.final-right {
+		left: 63% !important;
+	}
+	.result {
+		top: 55%;
 	}
 }
 
@@ -504,13 +578,25 @@ body {
 		left: 11rem;
 		top: 19rem;
 	}
+	.house-pick {
+		height: 8rem;
+		top: 15rem;
+		width: 8rem;
+	}
 	.result {
 		font-size: 2.5rem;
-		top: 22rem;
+		top: 25rem;
 	}
 	.result button {
 		font-size: 1.4rem;
 		width: 20rem;
+	}
+	.circle.go-left {
+		left: 2rem;
+		top: 15rem;
+	}
+	.final-left {
+		left: 2rem !important;
 	}
 }
 
@@ -560,7 +646,13 @@ body {
 		top: 19rem;
 	}
 }
-@media (max-width: 240px) {
+@media (max-width: 315px) {
+	.play-container {
+		font-size: 1.3rem;
+	}
+	.pick-text {
+		gap: 5rem;
+	}
 	.circle {
 		height: 6rem;
 		width: 6rem;
@@ -590,12 +682,20 @@ body {
 		left: 7rem;
 		top: 19rem;
 	}
-
+	.result button {
+		width: 15rem;
+	}
 	.modal {
 		height: 25rem;
 		width: 20rem;
 	}
 	.modal .image-rule {
 		width: 17rem;
+	}
+	.circle.go-left {
+		left: 1rem;
+	}
+	.final-left {
+		left: 1rem !important;
 	}
 }
